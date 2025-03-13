@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="career-title">Career Details</h1>
+        <button onclick="history.back()">Go Back</button>
+    </header>
+    
+    <section class="career-info">
+        <img id="career-image" src="" alt="Career Image">
+        <h2 id="career-name"></h2>
+        <p id="career-description"></p>
+        <ul>
+            <li><strong>Skills Required:</strong> <span id="career-skills"></span></li>
+            <li><strong>Average Salary:</strong> <span id="career-salary"></span></li>
+            <li><strong>Top Companies:</strong> <span id="career-companies"></span></li>
+            <li><strong>Education Required:</strong> <span id="career-education"></span></li>
+        </ul>
+    </section>
+
+    <script>
+        // Career Data
+        const careerData = {
+            "software-developer": {
+                title: "Software Developer",
+                image: "software-developer.jpg",
+                description: "Develops, tests, and maintains software applications.",
+                skills: "Programming (Python, Java, C++), Problem-Solving, Database Management",
+                salary: "₹6-12 LPA",
+                companies: "Google, Microsoft, Amazon, Infosys, TCS",
+                education: "B.Tech in CS/IT, MCA, or Bootcamps"
+            },
+            "data-scientist": {
+                title: "Data Scientist",
+                image: "data-scientist.jpg",
+                description: "Analyzes and interprets complex data for decision-making.",
+                skills: "Python, R, Machine Learning, SQL, Data Visualization",
+                salary: "₹10-25 LPA",
+                companies: "IBM, Google, Facebook, Accenture, ZS Associates",
+                education: "B.Tech, M.Tech, MSc in Data Science, Online Certifications"
+            },
+            "doctor": {
+                title: "Doctor",
+                image: "doctor.jpg",
+                description: "Diagnoses and treats patients to improve health.",
+                skills: "Medical Knowledge, Surgery, Patient Care, Research",
+                salary: "₹10-40 LPA",
+                companies: "AIIMS, Apollo Hospitals, Fortis, Max Healthcare",
+                education: "MBBS, MD, MS"
+            },
+            "engineer": {
+                title: "Engineer",
+                image: "engineer.jpg",
+                description: "Designs and builds machines, structures, and systems.",
+                skills: "Mathematics, Physics, CAD, Problem-Solving",
+                salary: "₹5-15 LPA",
+                companies: "L&T, TATA, Siemens, Reliance, Mahindra",
+                education: "B.Tech/B.E in Engineering Fields"
+            },
+            "teacher": {
+                title: "Teacher",
+                image: "teacher.jpg",
+                description: "Educates and inspires students in various subjects.",
+                skills: "Communication, Subject Knowledge, Patience",
+                salary: "₹3-8 LPA",
+                companies: "Schools, Universities, EdTech Platforms",
+                education: "B.Ed, M.Ed, Ph.D"
+            },
+            "lawyer": {
+                title: "Lawyer",
+                image: "lawyer.jpg",
+                description: "Represents clients in legal matters.",
+                skills: "Legal Knowledge, Research, Public Speaking, Negotiation",
+                salary: "₹6-20 LPA",
+                companies: "Law Firms, Courts, Private Clients",
+                education: "LLB, LLM"
+            },
+            "nurse": {
+                title: "Nurse",
+                image: "nurse.jpg",
+                description: "Provides healthcare and assists doctors.",
+                skills: "Patient Care, Communication, Medical Knowledge",
+                salary: "₹4-10 LPA",
+                companies: "Hospitals, Clinics, Private Practices",
+                education: "BSc Nursing, GNM, MSc Nursing"
+            },
+            "graphic-designer": {
+                title: "Graphic Designer",
+                image: "graphic-designer.jpg",
+                description: "Creates visual content using design software.",
+                skills: "Adobe Photoshop, Illustrator, Creativity, UI/UX",
+                salary: "₹3-12 LPA",
+                companies: "Design Studios, IT Companies, Freelancing",
+                education: "Diploma/Bachelor in Graphic Design"
+            },
+            "business-analyst": {
+                title: "Business Analyst",
+                image: "business-analyst.jpg",
+                description: "Analyzes business processes and suggests improvements.",
+                skills: "Problem-Solving, Data Analysis, SQL, Communication",
+                salary: "₹7-15 LPA",
+                companies: "EY, Deloitte, KPMG, Accenture, TCS",
+                education: "BBA, MBA, Business Analytics Certifications"
+            },
+            "chef": {
+                title: "Chef",
+                image: "chef.jpg",
+                description: "Prepares and cooks delicious meals.",
+                skills: "Cooking, Creativity, Time Management, Leadership",
+                salary: "₹4-12 LPA",
+                companies: "Hotels, Restaurants, Catering Services",
+                education: "Diploma/Bachelor in Culinary Arts, Hotel Management"
+            },
+            "pilot": {
+                title: "Pilot",
+                image: "pilot.jpg",
+                description: "Operates aircraft and ensures flight safety.",
+                skills: "Navigation, Communication, Decision-Making",
+                salary: "₹15-50 LPA",
+                companies: "Indigo, Air India, Qatar Airways, Indian Air Force",
+                education: "Commercial Pilot License (CPL), Aviation Degree"
+            },
+            "architect": {
+                title: "Architect",
+                image: "architect.jpg",
+                description: "Designs buildings and structures.",
+                skills: "AutoCAD, Creativity, Engineering Knowledge",
+                salary: "₹6-20 LPA",
+                companies: "Construction Companies, Real Estate, Freelance",
+                education: "B.Arch, M.Arch"
+            },
+            "cybersecurity-analyst": {
+        title: "Cybersecurity Analyst",
+        image: "cybersecurity.jpg",
+        description: "Protects computer systems and networks from cyber threats and hackers.",
+        skills: "Network Security, Ethical Hacking, Cryptography, Risk Management",
+        salary: "₹8-20 LPA",
+        companies: "Cisco, IBM, Palo Alto, Infosys, TCS",
+        education: "B.Tech in CS/IT, Cybersecurity Certifications (CEH, CISSP)"
+    },
+    "ai-ml-engineer": {
+        title: "AI/ML Engineer",
+        image: "ai-ml.jpg",
+        description: "Develops AI and machine learning models to automate tasks and improve decision-making.",
+        skills: "Python, TensorFlow, Machine Learning, Deep Learning, Data Science",
+        salary: "₹10-30 LPA",
+        companies: "Google, Microsoft, OpenAI, NVIDIA, Tesla",
+        education: "B.Tech in AI/ML, M.Tech, MSc in Data Science"
+    },
+    "blockchain-developer": {
+        title: "Blockchain Developer",
+        image: "blockchain.jpg",
+        description: "Builds decentralized applications using blockchain technology.",
+        skills: "Ethereum, Solidity, Smart Contracts, Cryptography",
+        salary: "₹8-25 LPA",
+        companies: "Polygon, Binance, WazirX, CoinDCX, IBM Blockchain",
+        education: "B.Tech in CS/IT, Blockchain Certifications"
+    },
+    "civil-engineer": {
+        title: "Civil Engineer",
+        image: "civil-engineer.jpg",
+        description: "Designs, constructs, and supervises infrastructure projects.",
+        skills: "Structural Analysis, AutoCAD, Project Management, Surveying",
+        salary: "₹5-15 LPA",
+        companies: "L&T, Tata Projects, GMR, Adani, Shapoorji Pallonji",
+        education: "B.Tech/B.E in Civil Engineering"
+    },
+    "psychologist": {
+        title: "Psychologist",
+        image: "psychologist.jpg",
+        description: "Studies human behavior and helps individuals improve their mental health.",
+        skills: "Counseling, Therapy, Research, Communication",
+        salary: "₹4-12 LPA",
+        companies: "Hospitals, Private Clinics, Schools, Research Centers",
+        education: "BA/MA in Psychology, PhD in Clinical Psychology"
+    },
+    "pharmacist": {
+        title: "Pharmacist",
+        image: "pharmacist.jpg",
+        description: "Prepares and provides medicines to patients as per prescriptions.",
+        skills: "Pharmacology, Patient Care, Drug Safety, Communication",
+        salary: "₹3-10 LPA",
+        companies: "Apollo, Cipla, Sun Pharma, Government Hospitals",
+        education: "B.Pharm, M.Pharm, Pharm.D"
+    },
+    "ux-ui-designer": {
+        title: "UX/UI Designer",
+        image: "ux-ui.jpg",
+        description: "Designs user-friendly and visually appealing digital experiences.",
+        skills: "Figma, Adobe XD, Wireframing, User Research, Prototyping",
+        salary: "₹6-18 LPA",
+        companies: "Google, Adobe, Swiggy, Zomato, Flipkart",
+        education: "B.Des, B.Tech in CS/IT, UX Certifications"
+    },
+    "judge": {
+        title: "Judge",
+        image: "judge.jpg",
+        description: "Interprets and applies laws in legal court cases.",
+        skills: "Legal Knowledge, Decision-Making, Analytical Thinking",
+        salary: "₹12-40 LPA",
+        companies: "Supreme Court, High Court, District Courts, Tribunals",
+        education: "LLB, LLM, Judicial Services Exam"
+    }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const careerKey = urlParams.get('career');
+
+        if (careerKey && careerData[careerKey]) {
+            const career = careerData[careerKey];
+            document.getElementById("career-title").textContent = career.title;
+            document.getElementById("career-image").src = career.image;
+            document.getElementById("career-name").textContent = career.title;
+            document.getElementById("career-description").textContent = career.description;
+            document.getElementById("career-skills").textContent = career.skills;
+            document.getElementById("career-salary").textContent = career.salary;
+            document.getElementById("career-companies").textContent = career.companies;
+            document.getElementById("career-education").textContent = career.education;
+        } else {
+            document.querySelector(".career-info").innerHTML = "<h2>Career not found</h2>";
+        }
+    </script>
+</body>
+</html>

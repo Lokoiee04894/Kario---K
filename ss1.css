@@ -1,0 +1,196 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA; /* Soft off-white */
+    color: #333333; /* Dark Charcoal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    background-color: #A8D5BA; /* Sage Green */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 5px solid #F4C6D7; /* Dusty Rose */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+header button {
+    background-color: #FF6B6B; /* Deep Peach */
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+header button:hover {
+    background-color: #F1C27D; /* Soft Gold */
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section Styling */
+.features {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #F4F4F4;
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.feature:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-out; /* Smooth fade-in effect */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Becomes fully visible */
+}
+
+/* Contact Form */
+.contact-form {
+    text-align: center;
+    padding: 40px 20px; /* Reduced padding for better fit */
+    background: #A8D5BA; /* Sage Green matching top section */
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensures form doesn't overflow */
+    box-sizing: border-box;
+    color: white; /* Text color changes to white to be visible on the background */
+}
+
+/* Form Heading */
+.contact-form h2 {
+    font-size: 2rem;
+    color: #FFFFFF ; /* White text for better contrast with image background */
+}
+
+/* Form Text */
+.contact-form p {
+    font-size: 1.2rem;
+    color: #FFFFFF; /* White text for better contrast with image background */
+}
+
+/* Form Inputs */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border: 2px solid #F4C6D7; /* Dusty Rose border to match top section */
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Light background for inputs */
+    color: #000; /* Black text for better readability */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Initially hidden placeholders */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4); /* Lighter placeholder text */
+}
+
+/* Show placeholder text on focus or hover */
+.contact-form input:hover::placeholder,
+.contact-form textarea:hover::placeholder,
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    color: rgba(0, 0, 0, 0.9); /* Darker text when hovered/focused */
+}
+
+/* Submit Button */
+.contact-form button {
+    background: #FF6B6B; /* Deep Peach Button to match the header */
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form button:hover {
+    background: #F1C27D; /* Soft Gold on Hover */
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 40px 10px;
+    }
+    .feature-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Mobile-specific styles */
+}
+

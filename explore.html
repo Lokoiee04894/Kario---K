@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Careers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Explore Careers</h1>
+        <p>Discover career paths that match your interests!</p>
+        <button onclick="history.back()">Go Back</button> 
+    </header>
+    
+    <section class="career-filters">
+        <h2>Find Your Career Path</h2>
+        <div class="filters">
+            <select id="industry-filter">
+                <option value="all">All Industries</option>
+                <option value="technology">Technology</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="business">Business</option>
+                <option value="education">Education</option>
+            </select>
+            <input type="text" id="search-career" placeholder="Search for a career...">
+        </div>
+    </section>
+    
+    <section class="career-list">
+        <h2>Popular Careers</h2>
+        <div class="careers">
+            <div class="career-card">
+                <img src="software-developer.jpg" alt="Software Developer">
+                <h3>Software Developer</h3>
+                <p>Design and build software applications.</p>
+                <a href="career-details.html?career=software-developer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="data-scientist.jpg" alt="Data Scientist">
+                <h3>Data Scientist</h3>
+                <p>Analyze and interpret complex data to help businesses.</p>
+                <a href="career-details.html?career=data-scientist">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="doctor.jpg" alt="Doctor">
+                <h3>Doctor</h3>
+                <p>Diagnose and treat illnesses to save lives.</p>
+                <a href="career-details.html?career=doctor">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="engineer.jpg" alt="Engineer">
+                <h3>Engineer</h3>
+                <p>Design and build machines, structures, and systems.</p>
+                <a href="career-details.html?career=engineer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="teacher.jpg" alt="Teacher">
+                <h3>Teacher</h3>
+                <p>Educate and inspire the next generation.</p>
+                <a href="career-details.html?career=teacher">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="lawyer.jpg" alt="Lawyer">
+                <h3>Lawyer</h3>
+                <p>Represent clients and provide legal guidance.</p>
+                <a href="career-details.html?career=lawyer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="nurse.jpg" alt="Nurse">
+                <h3>Nurse</h3>
+                <p>Provide healthcare support to patients.</p>
+                <a href="career-details.html?career=nurse">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="graphic-designer.jpg" alt="Graphic Designer">
+                <h3>Graphic Designer</h3>
+                <p>Design visual content for brands and companies.</p>
+                <a href="career-details.html?career=graphic-designer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="business-analyst.jpg" alt="Business Analyst">
+                <h3>Business Analyst</h3>
+                <p>Analyze business processes and improve efficiency.</p>
+                <a href="career-details.html?career=business-analyst">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="chef.jpg" alt="Chef">
+                <h3>Chef</h3>
+                <p>Prepare and cook delicious meals.</p>
+                <a href="career-details.html?career=chef">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="pilot.jpg" alt="Pilot">
+                <h3>Pilot</h3>
+                <p>Fly aircraft and ensure passenger safety.</p>
+                <a href="career-details.html?career=pilot">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="architect.jpg" alt="Architect">
+                <h3>Architect</h3>
+                <p>Design and plan buildings and structures.</p>
+                <a href="career-details.html?career=architect">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <!-- 13 New Careers -->
+            <div class="career-card">
+                <img src="cybersecurity.jpg" alt="Cybersecurity Analyst">
+                <h3>Cybersecurity Analyst</h3>
+                <p>Protects systems from cyber threats and hackers.</p>
+                <a href="career-details.html?career=cybersecurity-analyst">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="ai-ml.jpg" alt="AI/ML Engineer">
+                <h3>AI/ML Engineer</h3>
+                <p>Develops AI models for automation and decision-making.</p>
+                <a href="career-details.html?career=ai-ml-engineer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="blockchain.jpg" alt="Blockchain Developer">
+                <h3>Blockchain Developer</h3>
+                <p>Builds secure and decentralized applications.</p>
+                <a href="career-details.html?career=blockchain-developer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="civil-engineer.jpg" alt="Civil Engineer">
+                <h3>Civil Engineer</h3>
+                <p>Designs and supervises construction projects.</p>
+                <a href="career-details.html?career=civil-engineer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="psychologist.jpg" alt="Psychologist">
+                <h3>Psychologist</h3>
+                <p>Helps individuals improve mental health.</p>
+                <a href="career-details.html?career=psychologist">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="pharmacist.jpg" alt="Pharmacist">
+                <h3>Pharmacist</h3>
+                <p>Prepares and provides medicines.</p>
+                <a href="career-details.html?career=pharmacist">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="ux-ui.jpg" alt="UX/UI Designer">
+                <h3>UX/UI Designer</h3>
+                <p>Designs user-friendly interfaces for websites & apps.</p>
+                <a href="career-details.html?career=ux-ui-designer">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        
+            <div class="career-card">
+                <img src="judge.jpg" alt="Judge">
+                <h3>Judge</h3>
+                <p>Interprets and applies laws in court cases.</p>
+                <a href="career-details.html?career=judge">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq">
+                <div class="question">
+                    <span>What career options are available?</span>
+                    <i class="arrow">&#9662;</i>
+                </div>
+                <div class="answer">
+                    We provide information on various careers, including Software Developer, Data Scientist, Doctor, Engineer, and many more.
+                </div>
+            </div>
+    
+            <div class="faq">
+                <div class="question">
+                    <span>How do I choose the right career?</span>
+                    <i class="arrow">&#9662;</i>
+                </div>
+                <div class="answer">
+                    Choosing a career depends on your interests, skills, and job market trends. Explore different fields and match them with your strengths.
+                </div>
+            </div>
+    
+            <div class="faq">
+                <div class="question">
+                    <span>What qualifications are needed for different careers?</span>
+                    <i class="arrow">&#9662;</i>
+                </div>
+                <div class="answer">
+                    Each career has different educational requirements. For example, Software Developers often need a B.Tech in CS/IT, while Doctors need an MBBS degree.
+                </div>
+            </div>
+    
+            <div class="faq">
+                <div class="question">
+                    <span>Can I switch careers later?</span>
+                    <i class="arrow">&#9662;</i>
+                </div>
+                <div class="answer">
+                    Yes! Many professionals switch careers by learning new skills, getting certifications, and gaining experience in a new field.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .faq-section {
+            background: #111; 
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+    
+        .faq-section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #ffcc00; 
+        }
+    
+        .faq-container {
+            text-align: left;
+        }
+    
+        .faq {
+            background: #1a1a1a; 
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+    
+        .faq:hover {
+            background: #222;
+        }
+    
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffcc00; 
+        }
+    
+        .answer {
+            font-size: 16px;
+            display: none;
+            margin-top: 10px;
+            color: #ddd;
+            line-height: 1.5;
+        }
+    
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq.active .arrow {
+            transform: rotate(180deg);
+        }
+    
+        .faq.active .answer {
+            display: block;
+        }
+    </style>
+    
+    <script>
+// Scroll Animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.career-card, .explore-header h1, .explore-header p, .career-filters')
+       .forEach(el => observer.observe(el));
+
+// FAQ Toggle
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
+});
+
+// Force search input to be interactive
+document.querySelectorAll('.filters input').forEach(input => {
+    input.style.pointerEvents = 'auto';
+    input.style.opacity = '1';
+});
+        document.querySelectorAll(".faq").forEach((faq) => {
+            faq.addEventListener("click", () => {
+                faq.classList.toggle("active");
+            });
+        });
+    </script>
+    
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

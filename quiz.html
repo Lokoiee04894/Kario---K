@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Counseling Quiz</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #121212;
+            color: #fff;
+            margin: 0;
+        }
+        .quiz-container {
+            background: #1e1e1e;
+            padding: 25px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            width: 450px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        button {
+            background: linear-gradient(45deg, #ff8c00, #ff0080);
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            margin: 10px;
+            width: 45%;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 8px rgba(255, 140, 0, 0.4);
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff0080, #ff8c00);
+            box-shadow: 0px 6px 12px rgba(255, 140, 0, 0.6);
+        }
+        #options button {
+            background: #333;
+            border: 1px solid #ff8c00;
+            margin: 5px;
+            width: 100%;
+        }
+        #options button:hover {
+            background: #ff8c00;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .disabled {
+            background: #555 !important;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container" id="quiz-container">
+        <h2>Career Counseling Quiz</h2>
+        <p id="question">Loading...</p>
+        <div id="options"></div>
+        <div class="nav-buttons">
+            <button id="prev-btn" onclick="prevQuestion()" class="disabled" disabled>Previous</button>
+            <button id="next-btn" onclick="nextQuestion()" class="disabled" disabled>Next</button>
+        </div>
+        <button id="submit-btn" onclick="calculateResult()" style="display: none;">Submit Quiz</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What interests you the most?", options: ["Technology", "Art & Design", "Science", "Business & Finance"] },
+            { question: "How do you like to work?", options: ["In a team", "Independently", "Creatively", "Analyzing data"] },
+            { question: "What kind of problems do you like solving?", options: ["Technical issues", "People problems", "Business challenges", "Scientific research"] },
+            { question: "What excites you more?", options: ["Building something", "Performing or designing", "Experimenting & exploring", "Managing projects"] },
+            { question: "What would you love to do daily?", options: ["Coding & Programming", "Creating Art & Media", "Solving Scientific Puzzles", "Handling Business Deals"] }
+        ];
+        
+        let currentQuestionIndex = 0;
+        let selectedAnswers = [];
+        
+        function loadQuestion() {
+            const questionEl = document.getElementById("question");
+            const optionsEl = document.getElementById("options");
+            const nextBtn = document.getElementById("next-btn");
+            const prevBtn = document.getElementById("prev-btn");
+            const submitBtn = document.getElementById("submit-btn");
+            
+            questionEl.textContent = questions[currentQuestionIndex].question;
+            optionsEl.innerHTML = "";
+            nextBtn.classList.add("disabled");
+            nextBtn.disabled = true;
+            
+            questions[currentQuestionIndex].options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => selectAnswer(option, button);
+                optionsEl.appendChild(button);
+            });
+            
+            if (currentQuestionIndex === 0) {
+                prevBtn.classList.add("disabled");
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.classList.remove("disabled");
+                prevBtn.disabled = false;
+            }
+            
+            if (currentQuestionIndex === questions.length - 1) {
+                submitBtn.style.display = "block";
+            } else {
+                submitBtn.style.display = "none";
+            }
+        }
+
+        function selectAnswer(answer, button) {
+            selectedAnswers[currentQuestionIndex] = answer;
+            document.querySelectorAll("#options button").forEach(btn => btn.style.background = "#333");
+            button.style.background = "#ff8c00";
+            
+            const nextBtn = document.getElementById("next-btn");
+            nextBtn.classList.remove("disabled");
+            nextBtn.disabled = false;
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function calculateResult() {
+            const quizContainer = document.getElementById("quiz-container");
+            quizContainer.innerHTML = "<h2>Your Recommended Career Path</h2>";
+            
+            let recommendation = "";
+            if (selectedAnswers.includes("Technology")) {
+                recommendation = "Software Engineer, Data Scientist, or AI Specialist";
+            } else if (selectedAnswers.includes("Art & Design")) {
+                recommendation = "Graphic Designer, Animator, or UX/UI Designer";
+            } else if (selectedAnswers.includes("Science")) {
+                recommendation = "Biomedical Scientist, Researcher, or Chemist";
+            } else if (selectedAnswers.includes("Business & Finance")) {
+                recommendation = "Entrepreneur, Investment Banker, or Marketing Manager";
+            } else {
+                recommendation = "A career that matches your unique interests!";
+            }
+            
+            quizContainer.innerHTML += `<p>Based on your answers, you might enjoy a career as a <strong>${recommendation}</strong>.</p>`;
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
