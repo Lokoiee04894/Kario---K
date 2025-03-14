@@ -22,25 +22,25 @@ Kario-K is an AI-based career counseling system that helps students find the bes
    cd Kario-K
 
 
-  📸 Screenshots  
+📸 Screenshots  
 
- 🏠 Home Page  
-[Home Page](screenshot1.png)  
+🏠 Home Page  
+![Home Page](screenshot1.png)  
 
- 📊 Dashboard  
- [Dashboard](screenshot2.png)  
+📊 Dashboard  
+![Dashboard](screenshot2.png)  
 
- 📝 Form Section  
- [Form](screenshot3.png)  
+📝 Form Section  
+![Form](screenshot3.png)  
 
- 🧠 Quiz  
- [Quiz](screenshot4.png)  
+🧠 Quiz  
+![Quiz](screenshot4.png)  
 
 🔍 Explore Section  
- [Explore](screenshot5.png)  
+![Explore](screenshot5.png)  
 
- 🚀 Career Section  
- [Career](screenshot6.png)  
+🚀 Career Section  
+![Career](screenshot6.png)  
 
- ℹ️ Information Page  
- [Information](screenshot7.png)  
+ℹ️ Information Page  
+![Information](screenshot7.png)  
