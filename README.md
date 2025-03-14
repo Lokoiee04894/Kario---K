@@ -55,7 +55,7 @@ Kario-K is an AI-based career counseling system that helps students find the bes
 
  📞 Contact  
 
-📧 Email: your-email@example.com  
+📧 Email: kaif27293@gmail.com  
 🔗 GitHub: [Kario-K](https://github.com/Lokoiee04894/Kario---K)
 
 ⭐ If you like this project, give it a star! ⭐  
